@@ -1,0 +1,215 @@
+﻿@{
+    ViewData["Title"] = "Tổng quan";
+}
+
+<!-- TIÊU ĐỀ TRANG -->
+<div class="page-heading">
+
+    <div>
+        <p class="page-label">TỔNG QUAN HỆ THỐNG</p>
+
+        <h1>Xin chào!</h1>
+
+        <p class="page-description">
+            Chào mừng bạn đến với hệ thống quản lý phòng trọ.
+        </p>
+    </div>
+
+    <div class="date-box">
+        <span>HÔM NAY</span>
+        <strong>@DateTime.Now.ToString("dd/MM/yyyy")</strong>
+    </div>
+
+</div>
+
+
+<!-- THÔNG BÁO -->
+<div class="notice">
+    <div class="notice-icon">i</div>
+
+    <div>
+        <strong>Giao diện bản đầu tiên</strong>
+
+        <p>
+            Các số liệu bên dưới chỉ là dữ liệu minh họa.
+            Chúng ta sẽ kết nối cơ sở dữ liệu sau.
+        </p>
+    </div>
+</div>
+
+
+<!-- CÁC THẺ THỐNG KÊ -->
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Tổng số phòng</span>
+            <span class="stat-icon blue">▤</span>
+        </div>
+
+        <h2>20</h2>
+        <p>Phòng trong hệ thống</p>
+    </div>
+
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Đang cho thuê</span>
+            <span class="stat-icon green">✓</span>
+        </div>
+
+        <h2>15</h2>
+        <p>Phòng có người thuê</p>
+    </div>
+
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Phòng trống</span>
+            <span class="stat-icon orange">⌂</span>
+        </div>
+
+        <h2>5</h2>
+        <p>Phòng chưa có người thuê</p>
+    </div>
+
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Doanh thu tháng</span>
+            <span class="stat-icon purple">₫</span>
+        </div>
+
+        <h2 class="revenue">18.500.000</h2>
+        <p>Doanh thu minh họa (VNĐ)</p>
+    </div>
+
+</div>
+
+
+<!-- KHU VỰC BÊN DƯỚI -->
+<div class="dashboard-grid">
+
+    <!-- DANH SÁCH PHÒNG -->
+    <section class="content-card">
+
+        <div class="card-heading">
+            <div>
+                <h3>Danh sách phòng</h3>
+                <p>Một số phòng trong hệ thống</p>
+            </div>
+
+            <span class="small-label">DỮ LIỆU MẪU</span>
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Mã phòng</th>
+                        <th>Người thuê</th>
+                        <th>Giá thuê</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><strong>P101</strong></td>
+                        <td>Nguyễn Văn A</td>
+                        <td>2.500.000 đ</td>
+                        <td>
+                            <span class="badge occupied">
+                                Đang thuê
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>P102</strong></td>
+                        <td>Chưa có</td>
+                        <td>2.000.000 đ</td>
+                        <td>
+                            <span class="badge empty">
+                                Còn trống
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>P103</strong></td>
+                        <td>Trần Văn B</td>
+                        <td>3.000.000 đ</td>
+                        <td>
+                            <span class="badge occupied">
+                                Đang thuê
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>P104</strong></td>
+                        <td>Chưa có</td>
+                        <td>2.200.000 đ</td>
+                        <td>
+                            <span class="badge empty">
+                                Còn trống
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- THÔNG TIN HỆ THỐNG -->
+    <section class="content-card">
+
+        <div class="card-heading">
+            <div>
+                <h3>Thông tin hệ thống</h3>
+                <p>Thông tin dự án</p>
+            </div>
+        </div>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <span>Tên ứng dụng</span>
+                <strong>Quản lý phòng trọ</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Ngôn ngữ</span>
+                <strong>C#</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Framework</span>
+                <strong>ASP.NET Core MVC</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Cơ sở dữ liệu</span>
+                <strong>SQL Server</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Phiên bản</span>
+                <strong>1.0</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

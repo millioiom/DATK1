@@ -1,0 +1,124 @@
+@model IEnumerable<QuanLyPhongTro.Models.Room>
+
+@{
+    ViewData["Title"] = "Quản lý phòng trọ";
+}
+
+<!-- TIÊU ĐỀ -->
+<div class="page-heading">
+
+    <div>
+        <p class="page-label">QUẢN LÝ DANH SÁCH PHÒNG</p>
+
+        <h1>Phòng trọ</h1>
+
+        <p class="page-description">
+            Theo dõi và quản lý thông tin các phòng trọ.
+        </p>
+    </div>
+
+   <div class="heading-actions">
+
+    <div class="date-box">
+        <span>TỔNG SỐ PHÒNG</span>
+        <strong>@Model.Count() phòng</strong>
+    </div>
+
+    <a asp-action="Create" class="btn-primary">
+        + Thêm phòng
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- DANH SÁCH PHÒNG -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="success-message">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<section class="content-card">
+
+    <div class="card-heading">
+
+        <div>
+            <h3>Danh sách phòng trọ</h3>
+
+            <p>
+                Hiển thị thông tin các phòng trong hệ thống.
+            </p>
+        </div>
+
+        <span class="small-label">DỮ LIỆU MẪU</span>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã phòng</th>
+                    <th>Diện tích</th>
+                    <th>Giá thuê</th>
+                    <th>Người thuê</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                @foreach (var room in Model)
+                {
+                    <tr>
+
+                        <td>@room.Id</td>
+
+                        <td>
+                            <strong>@room.RoomCode</strong>
+                        </td>
+
+                        <td>@room.Area m²</td>
+
+                        <td>
+                            @room.Price.ToString("N0") đ
+                        </td>
+
+                        <td>
+                            @(room.TenantName ?? "Chưa có người thuê")
+                        </td>
+
+                        <td>
+
+                            @if (room.Status == "Đang thuê")
+                            {
+                                <span class="badge occupied">
+                                    Đang thuê
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge empty">
+                                    Còn trống
+                                </span>
+                            }
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>

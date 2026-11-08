@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Quản lý phòng trọ</title>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- MENU BÊN TRÁI -->
+        <aside class="sidebar">
+
+            <a asp-controller="Home" asp-action="Index" class="brand">
+                <span class="brand-logo">PT</span>
+                <span>Quản lý phòng trọ</span>
+            </a>
+
+            <div class="menu-title">MENU CHÍNH</div>
+
+            <nav class="sidebar-menu">
+
+               <a asp-controller="Home"
+   asp-action="Index"
+   class="menu-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">
+</a>
+
+               <a asp-controller="Rooms"
+   asp-action="Index"
+   class="menu-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rooms" ? "active" : "")">
+
+    <span class="menu-icon">▤</span>
+    Phòng trọ
+
+</a>
+
+                <div class="menu-item disabled">
+                    <span class="menu-icon">♙</span>
+                    Người thuê
+                </div>
+
+                <div class="menu-item disabled">
+                    <span class="menu-icon">▧</span>
+                    Hợp đồng
+                </div>
+
+                <div class="menu-item disabled">
+                    <span class="menu-icon">▤</span>
+                    Hóa đơn
+                </div>
+
+                <div class="menu-item disabled">
+                    <span class="menu-icon">◷</span>
+                    Điện nước
+                </div>
+
+                <div class="menu-item disabled">
+                    <span class="menu-icon">▥</span>
+                    Báo cáo
+                </div>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="admin-avatar">QT</div>
+                <div>
+                    <strong>Quản trị viên</strong>
+                    <small>Quản lý hệ thống</small>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- KHU VỰC NỘI DUNG -->
+        <div class="main-area">
+
+            <header class="topbar">
+                <div>
+                    <span class="topbar-label">HỆ THỐNG QUẢN LÝ</span>
+                    <strong>Quản lý phòng trọ</strong>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="status-dot"></span>
+                    Hệ thống đang hoạt động
+                </div>
+            </header>
+
+
+            <main class="main-content">
+                @RenderBody()
+            </main>
+
+
+            <footer class="footer">
+                © @DateTime.Now.Year - Quản lý phòng trọ
+            </footer>
+
+        </div>
+
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

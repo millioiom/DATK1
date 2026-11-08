@@ -1,0 +1,14 @@
+## Build output
+bin/
+obj/
+.vs/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Local configuration and secrets
+appsettings.*.json
+secrets.json
